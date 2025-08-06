@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+/* خطوط عربية جميلة */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
+  min-height: 100vh;
+  font-family: 'Cairo', 'Amiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* شريط علوي */
+nav {
+  background: linear-gradient(90deg, #388e3c 0%, #43a047 100%);
+  padding: 1rem 1.2rem;
+  width: 100%;
+  max-width: 430px;
+  border-radius: 0 0 28px 28px;
+  box-shadow: 0 6px 24px rgba(46,125,50,0.13);
+  border-bottom: 3px solid #ffd700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* أيقونات أو أزرار دائرية */
+nav a {
+  color: #fff;
+  background: linear-gradient(135deg, #43a047 0%, #388e3c 100%);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 0.3rem;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.09);
+  transition: background 0.3s, transform 0.2s;
+  border: 2px solid #ffd700;
+}
+
+nav a:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #43a047 100%);
+  color: #2e7d32;
+  transform: scale(1.12);
+}
+
+/* عنوان رئيسي */
+h1 {
+  color: #388e3c;
+  text-align: center;
+  margin: 1.5rem 0 1.2rem 0;
+  font-size: 2.2rem;
+  font-family: 'Amiri', 'Cairo', serif;
+  letter-spacing: 2px;
+  background: rgba(255,255,255,0.90);
+  border-radius: 20px;
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 12px rgba(46,125,50,0.09);
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  margin: 0.6rem auto 0;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd700 0%, #388e3c 100%);
+  border-radius: 2px;
+}
+
+/* محتوى التطبيق */
+main {
+  padding: 1.5rem 1rem;
+  max-width: 430px;
+  width: 100%;
+  background: rgba(255,255,255,0.96);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(46,125,50,0.13);
+  margin: 0.7rem 0 2.2rem 0;
+  margin-right: 0;
+  margin-left: 110px;
+  transition: margin-left 0.3s;
+}
+
+/* قائمة الصلوات */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: linear-gradient(90deg, #e0f2f1 0%, #fffde4 100%);
+  margin: 1rem 0;
+  padding: 1.2rem;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  text-align: center;
+  border-right: 8px solid #ffd700;
+  font-family: 'Cairo', 'Amiri', serif;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+li:hover {
+  box-shadow: 0 6px 24px rgba(46,125,50,0.15);
+  transform: scale(1.03);
+}
+
+/* بطاقة الصلاة بزخرفة إسلامية */
+.prayer-card {
+  background: url('https://i.imgur.com/L8jY8mG.png') no-repeat center center / cover, linear-gradient(135deg, #fffde4 0%, #e0f7fa 100%);
+  padding: 1.4rem;
+  border-radius: 24px;
+  box-shadow: 0 6px 24px rgba(46,125,50,0.15);
+  background-blend-mode: lighten;
+  border: 2px solid #ffd700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* زخرفة إسلامية بسيطة أعلى البطاقة */
+.prayer-card::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 20px;
+  background: url('https://svgshare.com/i/15kA.svg') no-repeat center center / contain;
+  opacity: 0.5;
+}
+
+/* إطار القرآن */
+.quran-frame-container {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 0 18px rgba(46,125,50,0.13);
+  border: 2px solid #388e3c;
+  margin-bottom: 1.5rem;
+}
+
+.quran-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fffde4;
+  border-radius: 24px;
+}
+
+/* زر عائم */
+.fab-btn {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffd700 0%, #43a047 100%);
+  color: #388e3c;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  box-shadow: 0 8px 32px rgba(46,125,50,0.18);
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.fab-btn:hover {
+  background: linear-gradient(135deg, #43a047 0%, #ffd700 100%);
+  transform: scale(1.10);
+}
+
+/* شريط جانبي للقائمة */
+.sidebar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: calc(100vh - 80px);
+  width: 90px;
+  background: linear-gradient(135deg, #43a047 0%, #e0f7fa 100%);
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 28px;
+  box-shadow: 2px 0 16px rgba(46,125,50,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 0;
+  z-index: 1100;
+}
+
+.sidebar .sidebar-item {
+  width: 62px;
+  height: 62px;
+  margin: 0.7rem 0;
+  background: linear-gradient(135deg, #fffde4 0%, #ffd700 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(67,160,71,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #388e3c;
+  border: 2px solid #43a047;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar .sidebar-item:hover {
+  background: linear-gradient(135deg, #43a047 0%, #ffd700 100%);
+  color: #fff;
+  transform: scale(1.08);
+}
