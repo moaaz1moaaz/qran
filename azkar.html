@@ -9,90 +9,81 @@
     body {
       background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
     }
+
     .azkar-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
-      margin: 1.5rem 0 2.5rem 0;
-      background: none !important; /* إزالة أي خلفية */
+      gap: 0.8rem;
+      margin: 1.5rem 0 2rem 0;
     }
+
     .azkar-btn {
-      background: rgba(255,255,255,0.85); /* خلفية فاتحة وواضحة */
+      background: rgba(255,255,255,0.9);
       color: #025e07;
       border: 2px solid #ffd700;
-      border-radius: 18px;
-      padding: 0.9rem 2rem;
-      font-size: 1.18rem;
+      border-radius: 16px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
       font-family: 'Cairo', 'Amiri', serif;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(46,125,50,0.10);
-      transition: background 0.3s, color 0.2s, border-color 0.3s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(46,125,50,0.08);
+      transition: all 0.3s ease;
       font-weight: bold;
-      letter-spacing: 1px;
-      backdrop-filter: blur(2px);
-      opacity: 1;
     }
+
     .azkar-btn:hover, .azkar-btn:focus {
       background: linear-gradient(135deg, #ffd700 0%, #93e097 100%);
       color: #fff;
-      border-color: #a4eca7;
-      transform: scale(1.07);
-      opacity: 1;
+      transform: scale(1.06);
     }
-    .prayer-card {
-      background: url('https://i.imgur.com/L8jY8mG.png') no-repeat top left/80px, linear-gradient(135deg, #fffde4 0%, #e0f7fa 100%);
-      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-      border-radius: 28px;
-      box-shadow: 0 8px 32px rgba(46,125,50,0.13);
-      border: 2px solid #ffd700;
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
+
     .prayer-card h2 {
-      color: #00ff0d;
+      color: #025e07;
       font-family: 'Amiri', 'Cairo', serif;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       background: rgba(255,255,255,0.85);
-      border-radius: 14px;
-      padding: 0.5rem 0;
+      border-radius: 12px;
+      padding: 0.6rem 0;
       text-align: center;
-      box-shadow: 0 2px 12px rgba(46,125,50,0.07);
     }
-    .prayer-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+
     .prayer-card ul li {
-      background: linear-gradient(90deg, #e0f2f1 0%, #fffde4 100%);
-      margin: 0.7rem 0;
-      padding: 1rem;
-      border-radius: 16px;
-      font-size: 1.08rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      text-align: right;
-      border-right: 6px solid #ffd700;
-      font-family: 'Cairo', 'Amiri', serif;
-      transition: box-shadow 0.2s;
+      font-size: 1.05rem;
       line-height: 1.8;
     }
+
     .prayer-card ul li span {
       color: #014306;
       font-weight: bold;
-      font-family: 'Amiri', serif;
       display: block;
       margin-top: 0.3em;
-      font-size: 1.1em;
     }
-    @media (max-width: 600px) {
-      .prayer-card {
-        padding: 1rem 0.5rem;
+
+    @media (max-width: 700px) {
+      main {
+        max-width: 95vw !important;
+        padding: 1rem !important;
+        margin: 1rem auto !important;
       }
+
       .azkar-btn {
-        padding: 0.7rem 1rem;
         font-size: 1rem;
+        padding: 0.6rem 1rem;
+        flex: 1 1 100%;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .prayer-card {
+        padding: 1rem 0.8rem;
+        box-shadow: none;
+      }
+
+      .prayer-card ul li {
+        font-size: 1rem;
+        padding: 0.8rem;
       }
     }
   </style>
@@ -107,55 +98,47 @@
   </aside>
 
   <main>
-    <h1 style="color:#388e3c; font-family:'Amiri','Cairo',serif; background:rgba(255,255,255,0.92); border-radius:20px; padding:1rem 0; margin-bottom:1.2rem; box-shadow:0 2px 12px rgba(46,125,50,0.09); text-align:center;">
-      🕊️ أذكار المسلم
-    </h1>
+    <h1>🕊️ أذكار المسلم</h1>
+
     <nav class="azkar-nav">
       <button class="azkar-btn" onclick="document.getElementById('morning-azkar').scrollIntoView({behavior:'smooth'})">🌅 أذكار الصباح</button>
       <button class="azkar-btn" onclick="document.getElementById('evening-azkar').scrollIntoView({behavior:'smooth'})">🌇 أذكار المساء</button>
       <button class="azkar-btn" onclick="document.getElementById('prayer-azkar').scrollIntoView({behavior:'smooth'})">🕌 أذكار بعد الصلاة</button>
     </nav>
+
+    <!-- أذكار الصباح -->
     <div class="prayer-card" id="morning-azkar">
       <h2>🌅 أذكار الصباح</h2>
       <ul>
-        <li>آية الكرسي:<span>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ... (البقرة:255)</span></li>
-        <li>سورة الإخلاص:<span>قُلْ هُوَ اللَّهُ أَحَدٌ ۞ اللَّهُ الصَّمَدُ ۞ لَمْ يَلِدْ وَلَمْ يُولَدْ ۞ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</span> (3 مرات)</li>
+        <li>آية الكرسي:<span>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ...</span></li>
+        <li>سورة الإخلاص:<span>قُلْ هُوَ اللَّهُ أَحَدٌ ...</span> (3 مرات)</li>
         <li>سورة الفلق:<span>قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ...</span> (3 مرات)</li>
         <li>سورة الناس:<span>قُلْ أَعُوذُ بِرَبِّ النَّاسِ ...</span> (3 مرات)</li>
         <li>اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور</li>
-        <li>رضيت بالله رباً وبالإسلام ديناً وبمحمد ﷺ نبياً ورسولاً</li>
-        <li>سبحان الله وبحمده (100 مرة)</li>
-        <li>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير (100 مرة)</li>
-        <li>اللهم إني أسألك العافية في الدنيا والآخرة</li>
-        <li>اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك ...</li>
       </ul>
     </div>
+
+    <!-- أذكار المساء -->
     <div class="prayer-card" id="evening-azkar">
       <h2>🌇 أذكار المساء</h2>
       <ul>
-        <li>آية الكرسي:<span>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ... (البقرة:255)</span></li>
+        <li>آية الكرسي:<span>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ...</span></li>
         <li>سورة الإخلاص:<span>قُلْ هُوَ اللَّهُ أَحَدٌ ...</span> (3 مرات)</li>
         <li>سورة الفلق:<span>قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ...</span> (3 مرات)</li>
         <li>سورة الناس:<span>قُلْ أَعُوذُ بِرَبِّ النَّاسِ ...</span> (3 مرات)</li>
         <li>اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت وإليك المصير</li>
-        <li>رضيت بالله رباً وبالإسلام ديناً وبمحمد ﷺ نبياً ورسولاً</li>
-        <li>سبحان الله وبحمده (100 مرة)</li>
-        <li>لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير (100 مرة)</li>
-        <li>اللهم إني أسألك العافية في الدنيا والآخرة</li>
-        <li>اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك ...</li>
       </ul>
     </div>
+
+    <!-- أذكار بعد الصلاة -->
     <div class="prayer-card" id="prayer-azkar">
       <h2>🕌 أذكار بعد الصلاة</h2>
       <ul>
         <li>سبحان الله – 33 مرة</li>
         <li>الحمد لله – 33 مرة</li>
         <li>الله أكبر – 34 مرة</li>
-        <li>آية الكرسي:<span>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ... (البقرة:255)</span></li>
+        <li>آية الكرسي:<span>اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ...</span></li>
         <li>سورة الإخلاص، الفلق، الناس (مرة واحدة لكل سورة)</li>
-        <li>اللهم أنت السلام ومنك السلام، تباركت يا ذا الجلال والإكرام</li>
-        <li>استغفر الله (3 مرات)</li>
-        <li>اللهم أعني على ذكرك وشكرك وحسن عبادتك</li>
       </ul>
     </div>
   </main>
